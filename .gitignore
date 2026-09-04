@@ -1,0 +1,27 @@
+# Secrets / credentials
+*.pem
+*.key
+*.pfx
+*.p12
+*.cer
+*.crt
+.env
+.env.*
+credentials
+credentials.*
+secrets
+secrets.*
+
+# AWS local files
+.aws/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+
+# Generated files
+*.log
+/docs/INTERVIEW-NOTES.md
+/docs/SCREENSHOT-INDEX.md
