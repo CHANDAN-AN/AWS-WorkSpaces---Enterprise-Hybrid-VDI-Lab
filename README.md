@@ -7,40 +7,11 @@ A hands-on enterprise-style Amazon WorkSpaces environment integrated with an exi
 This project is intentionally separate from the existing `Enterprise-Infrastructure-LAB` repository. The existing infrastructure repository is the source of truth for the on-premises lab; this repository documents the AWS WorkSpaces hybrid VDI extension.
 
 ## Target architecture
+## Target architecture
+
+![AWS WorkSpaces Enterprise Hybrid VDI HLD](docs/images/AWS%20Workspace%20Lab%20HLD.png)
 
 ```text
-                         AWS Cloud – ca-central-1
-┌────────────────────────────────────────────────────────────────────┐
-│                                                                    │
-│  VPC 10.20.0.0/16                                                  │
-│  ┌──────────────────────┐       ┌───────────────────────────────┐  │
-│  │ Subnet A             │       │ Subnet B                      │  │
-│  │ 10.20.10.0/24        │       │ 10.20.20.0/24                 │  │
-│  │ ca-central-1a        │       │ ca-central-1b                 │  │
-│  │                      │       │                               │  │
-│  │ AD Connector ENI     │       │ AD Connector ENI              │  │
-│  │ WorkSpaces           │       │ WorkSpaces                    │  │
-│  └──────────┬───────────┘       └──────────────┬────────────────┘  │
-│             │                                  │                   │
-│             └──────────────┬───────────────────┘                   │
-│                            │                                       │
-│                     Virtual Private Gateway                        │
-│                            │                                       │
-└────────────────────────────┼───────────────────────────────────────┘
-                             │
-                      Site-to-Site VPN
-                       Tunnel 1 – UP
-                             │
-                    Sophos FW01 / XFRM1
-                             │
-                    VLAN 20 – 10.10.20.0/24
-                             │
-          ┌──────────────────┴──────────────────┐
-          │                                     │
-     DC01 10.10.20.20                     DC02 10.10.20.21
-     CORP.AC-LAB.TOP                       DNS / AD
-          │
-     On-prem Hyper-V environment
 ```
 
 ## Current status - 2026-09-04
