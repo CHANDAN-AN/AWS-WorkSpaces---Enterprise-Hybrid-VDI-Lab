@@ -10,23 +10,23 @@ This project is intentionally separate from the existing `Enterprise-Infrastruct
 
 ```text
                          AWS Cloud – ca-central-1
-┌───────────────────────────────────────────────────────────────────────┐
-│                                                                       │
-│  VPC 10.20.0.0/16                                                    │
-│  ┌──────────────────────┐       ┌─────────────────────────────────┐  │
+┌────────────────────────────────────────────────────────────────────┐
+│                                                                    │
+│  VPC 10.20.0.0/16                                                  │
+│  ┌──────────────────────┐       ┌───────────────────────────────┐  │
 │  │ Subnet A             │       │ Subnet B                      │  │
 │  │ 10.20.10.0/24        │       │ 10.20.20.0/24                 │  │
-│  │ ca-central-1a        │       │ ca-central-1b                  │  │
-│  │                      │       │                                │  │
-│  │ AD Connector ENI     │       │ AD Connector ENI               │  │
-│  │ WorkSpaces           │       │ WorkSpaces                     │  │
-│  └──────────┬───────────┘       └──────────────┬─────────────────┘  │
-│             │                                  │                    │
-│             └──────────────┬───────────────────┘                    │
-│                            │                                        │
-│                     Virtual Private Gateway                         │
-│                            │                                        │
-└────────────────────────────┼────────────────────────────────────────┘
+│  │ ca-central-1a        │       │ ca-central-1b                 │  │
+│  │                      │       │                               │  │
+│  │ AD Connector ENI     │       │ AD Connector ENI              │  │
+│  │ WorkSpaces           │       │ WorkSpaces                    │  │
+│  └──────────┬───────────┘       └──────────────┬────────────────┘  │
+│             │                                  │                   │
+│             └──────────────┬───────────────────┘                   │
+│                            │                                       │
+│                     Virtual Private Gateway                        │
+│                            │                                       │
+└────────────────────────────┼───────────────────────────────────────┘
                              │
                       Site-to-Site VPN
                        Tunnel 1 – UP
@@ -43,7 +43,7 @@ This project is intentionally separate from the existing `Enterprise-Infrastruct
      On-prem Hyper-V environment
 ```
 
-## Current status — 2026-09-04
+## Current status - 2026-09-04
 
 **Overall: Functional hybrid network + Active AD Connector + WorkSpaces directory registered; first WorkSpace provisioning is the current step.**
 
@@ -140,28 +140,3 @@ docs/
 └── images/
     └── .gitkeep
 ```
-
-## Screenshot policy
-
-Screenshots are evidence of actual implementation. Do not use random internet screenshots as proof of this lab.
-
-Save screenshots under:
-
-```text
-docs/images/
-```
-
-Use the naming convention in `docs/SCREENSHOT-INDEX.md`.
-
-For screenshots already uploaded in the ChatGPT conversation:
-1. Open the relevant image in the conversation.
-2. Use the image's download/save option if available.
-3. Rename it to the filename specified in `SCREENSHOT-INDEX.md`.
-4. Place it in `docs/images/`.
-5. Reference it from the relevant Markdown document with a relative link.
-
-If an old screenshot cannot be downloaded from the conversation, reproduce the same state in the AWS/Sophos/Windows console and capture a fresh screenshot. A fresh screenshot is preferable because it proves the current state.
-
-## Next step
-
-Continue with the first WorkSpace deployment. Keep the first deployment to one user and verify the bundle/running-mode choice before clicking **Create WorkSpaces**.
