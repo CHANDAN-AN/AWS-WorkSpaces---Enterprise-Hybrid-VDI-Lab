@@ -10,6 +10,8 @@ This project is intentionally separate from the existing `Enterprise-Infrastruct
 ## Target architecture
 
 ![AWS WorkSpaces Enterprise Hybrid VDI HLD](docs/images/AWS%20Workspace%20Lab%20HLD.png)
+![AWS WorkSpaces VPC](docs/images/AWS-WorkSpaces-Hybrid-VPC.png)
+![AWS WorkSpaces Enterprise Hybrid VDI HLD](docs/images/userconnection-test.png)
 
 ```text
 ```
